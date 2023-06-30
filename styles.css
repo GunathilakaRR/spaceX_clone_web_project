@@ -1,0 +1,73 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+a{
+    color: white;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    padding: 20px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 40px;
+}
+
+header .logo{
+    margin-right: 40px;
+}
+
+header img{
+    width: 200px;
+}
+
+.centerNav a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 13px;
+}
+
+.rightNav{
+    position: fixed;
+    right: 0;
+    top: 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.rightNav a{
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 50px;
+}
+
+.hamburger{
+    position: absolute;
+    right: 0;
+    top: -7px;
+    color: white;
+    padding: 20px;
+    background-color: transparent;
+    border: none;
+    transform: rotate(90deg);
+}
+
+
+
+/* content seciton */
+
+section{
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}
