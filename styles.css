@@ -19,21 +19,45 @@ header{
     max-width: 1400px;
     margin: 0 auto;
     height: 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 
 header .logo{
     margin-right: 40px;
+    margin-left: 25px;
 }
 
 header img{
     width: 200px;
 }
 
-.centerNav a{
+.centerNav a, .rightNav a{
     text-transform: uppercase;
     text-decoration: none;
     font-size: 14px;
-    padding: 0 13px;
+    padding: 0 ;
+    margin: 0 13px;
+    position: relative;
+}
+
+.centerNav a:before, .rightNav a:before{
+    content: '';
+    width: 0;
+    right: 0;
+    bottom: -3px;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    transition: width .2s linear;
+}
+
+.centerNav a:hover:before, .rightNav a:hover:before{
+    right: initial;
+    width: 100%;
+    left: 0;
+    
 }
 
 .rightNav{
@@ -46,10 +70,8 @@ header img{
 }
 
 .rightNav a{
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 0 50px;
+    padding: 0 ;
+    margin: 0 50px;
 }
 
 .hamburger{
@@ -70,4 +92,73 @@ header img{
 section{
     min-height: 100vh;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+section div.content{
+    position: absolute;
+    bottom: 15vh;
+    left: 50px;
+    text-transform: uppercase;
+    max-width: 360px
+    
+
+}
+
+section div.content h2{
+    font-size: 40px;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif ;
+}
+
+section div.content h3{
+    margin: 0 0 10px;
+    font-family: 'Ubuntu', sans-serif ;
+}
+
+section .content a{
+    border: 2px solid white;
+    padding: 10px 50px;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+section .content-outer{
+    flex-grow: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+
+/* footer section  */
+footer{
+    padding: 30px 100px ;
+}
+
+footer nav{
+    text-align: center;
+}
+
+footer nav span{
+    color: #777;
+    padding-right: 40px;
+}
+
+footer nav a{
+    padding: 0 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color .2s linear;
+}
+
+footer nav a:hover{
+    color: gray;
 }
