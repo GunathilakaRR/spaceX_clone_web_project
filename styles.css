@@ -21,7 +21,7 @@ header{
     height: 40px;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 header .logo{
@@ -31,6 +31,36 @@ header .logo{
 
 header img{
     width: 200px;
+}
+
+header a.logo{
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    margin-left: -80px;
+}
+
+@media(min-width:1000px){
+    header a.logo{
+        margin-right: 40px;
+        position: relative;
+        top: initial;
+        left: initial;
+        margin-left: initial;
+    }
+    header img{
+        width: 200px;
+    }
+}
+
+.centerNav{
+    display: none;
+}
+
+@media(min-width:1000px){
+    .centerNav{
+        display: block;
+    }
 }
 
 .centerNav a, .rightNav a{
@@ -70,21 +100,87 @@ header img{
 }
 
 .rightNav a{
-    padding: 0 ;
-    margin: 0 50px;
+    display: none;
+}
+
+@media(min-width: 1000px){
+    .rightNav a{
+        display: inline-block;
+        padding: 0 ;
+        margin: 0 50px;
+    }
 }
 
 .hamburger{
-    position: absolute;
-    right: 0;
-    top: -7px;
+    position: fixed;
+    right: 6px;
+    top: 13px;
     color: white;
     padding: 20px;
     background-color: transparent;
     border: none;
-    transform: rotate(90deg);
+    cursor: pointer;
+    z-index: 3;
+
 }
 
+.hamburger span{
+    display: block;
+    width: 16px;
+    height: 2px;
+    margin: 2px 0;
+    background-color: white;
+    position: relative;
+    transition: all 0.2s linear;
+}
+
+.hamburger.active span:first-child, .hamburger.active span:nth-child(2){
+    transform: rotate(45deg);
+    
+}
+
+.hamburger.active span:nth-child(2){
+    transform: rotate(-45deg);
+    top: -4px;
+}
+
+.hamburger.active span:last-child{
+    opacity: 0;
+}
+
+.shadow.active{
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0,0,0,.3);
+    z-index: 1;
+}
+
+nav.mobileNav{
+    display: none;
+}
+
+nav.mobileNav.active{
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 290px;
+    background-color: black;
+    padding-top: 70px;
+}
+
+nav.mobileNav.active a{
+    display: block;
+    border-bottom: 1px solid #222;
+    text-transform: uppercase;
+    padding: 15px;
+    text-decoration: none;
+    text-align: right;
+    font-family: sans-serif;
+    padding: 16px 25px;
+}
 
 
 /* content seciton */
